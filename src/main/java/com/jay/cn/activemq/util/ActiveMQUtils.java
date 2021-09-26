@@ -75,6 +75,16 @@ public class ActiveMQUtils {
 
     }
 
+    @Test
+    public void testConsumer2() throws JMSException {
+        MessageConsumer consumer = this.getConsumer();
+        while (true){
+            Message message = consumer.receive();
+            System.out.println(message);
+        }
+
+    }
+
     @After
     public void close() throws JMSException {
         connection.close();
